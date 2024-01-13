@@ -18,6 +18,7 @@ async def main():
     # Register the message handler
     @client.on(events.NewMessage)
     async def handle_message(event):
+        await event.reply(event.text)
         if "www.instagram.com/reel" in event.text:
             updated_message = event.text.replace("www.instagram.com/reel", "www.instagram.com/reel")
             await event.reply(updated_message)
